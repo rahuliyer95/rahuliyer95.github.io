@@ -18,11 +18,14 @@ $(() => {
     licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
     anchors: ["home", "resume", "works"],
     autoScrolling: true,
-    menu: "#menu",
     navigation: true,
     navigationPosition: "right",
+    navigationTooltips: ["Home", "Resume", "Works"],
     scrollingSpeed: 750,
     scrollOverflow: true,
+    scrollOverflowOptions: {
+      scrollbars: false
+    },
     verticalCentered: true
   });
 
