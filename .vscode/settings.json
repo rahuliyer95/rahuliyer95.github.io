@@ -1,0 +1,4 @@
+{
+  "prettier.singleQuote": false,
+  "html.format.wrapAttributes": "force-aligned"
+}

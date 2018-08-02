@@ -1,0 +1,380 @@
+// Variables
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+// Imports
+@import "~bootstrap/scss/bootstrap";
+@import "~fullpage.js/dist/fullpage.css";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+
+$primary: #2195f2;
+$primaryDark: #0068bf;
+$animDuration: 750ms;
+
+body {
+  font-family: "Open Sans", -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    sans-serif;
+}
+
+h3,
+h4 {
+  margin-bottom: 0 !important;
+}
+
+.section-header__container {
+  // Mobile
+  @media only screen and (max-device-width: 768px) {
+    background: url("../assets/img/header-mobile.webp");
+    background-repeat: repeat;
+    background-size: 100%;
+  }
+  // Tablet
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1366px) and (orientation: portrait) {
+    background: url("../assets/img/header-tablet-portrait.webp");
+    background-repeat: repeat;
+    background-size: 100%;
+  }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1366px) and (orientation: landscape) {
+    background: url("../assets/img/header-tablet-landscape.webp");
+    background-repeat: repeat;
+    background-size: 100%;
+  }
+  // Desktop
+  @media only screen and (min-width: 1367px) {
+    background: url("../assets/img/header-desktop.webp");
+    background-repeat: repeat;
+    background-size: 100%;
+  }
+
+  .title {
+    font-size: 3em;
+    font-weight: 500;
+    margin: 0 auto;
+    padding: 0.75em 0 0.25em 0;
+    color: #fff;
+    text-align: center;
+    // Animations
+    transform: scale(0);
+    opacity: 0;
+    transition: transform $animDuration ease-in-out,
+      opacity $animDuration ease-in-out;
+  }
+
+  .info {
+    font-size: 1.25em;
+    color: #fff;
+    text-align: center;
+    // Animations
+    transform: scale(0);
+    opacity: 0;
+    transition: transform $animDuration ease-in-out,
+      opacity $animDuration ease-in-out;
+  }
+
+  .contact {
+    margin-top: 32px;
+    text-align: center;
+
+    &:first-child {
+      margin-left: 0px;
+    }
+
+    & > * {
+      margin-left: 12px;
+    }
+
+    .brand {
+      font-size: 36px;
+      color: #fff;
+      // Animations
+      transform: scale(0);
+      opacity: 0;
+      transition: transform $animDuration ease-in-out,
+        opacity $animDuration ease-in-out;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  &.active {
+    .title {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .info {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .contact .brand {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+.section-resume__container {
+  background: url("../assets/img/bg-content.webp") 100% repeat;
+
+  .title {
+    color: #9ba9a9;
+    text-align: center;
+    transform: translateX(-1000px);
+    transition: transform $animDuration ease-in-out;
+  }
+
+  .section-resume {
+    margin-top: 16px;
+
+    .section-header {
+      // Animations
+      transform: translateX(-250px);
+      transition: transform $animDuration ease-in-out;
+
+      .title {
+        text-align: left;
+        margin-left: 0;
+        color: #000;
+        font-weight: 800;
+        padding-bottom: 8px;
+        margin-left: 32px;
+
+        // Mobile
+        @media only screen and (max-width: 768px) {
+          margin-left: 16px;
+          margin-bottom: 16px;
+        }
+
+        .purple {
+          border-bottom: 3px solid #9c27b0;
+        }
+
+        .teal {
+          border-bottom: 3px solid #009688;
+        }
+      }
+    }
+
+    .section-info {
+      // Animations
+      transform: translateX(2000px);
+      transition: transform $animDuration ease-in-out;
+
+      & > div {
+        margin: 16px 0 16px 0;
+
+        &:first-child {
+          margin-top: 0px;
+        }
+
+        &:last-child {
+          margin: 0;
+        }
+
+        & > .info {
+          & > span {
+            color: #757575;
+            font-size: 14px;
+
+            &.italic {
+              font-style: italic;
+            }
+
+            &.separator {
+              color: #000;
+              padding: 0 4px 0 4px;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+
+    & > :nth-last-child(n + 2) {
+      &:after {
+        background-color: #eeeeee;
+        content: " ";
+        height: 2px;
+        margin: 32px 64px 32px 64px;
+        width: 100%;
+      }
+    }
+  }
+
+  &.active {
+    .title {
+      transform: translateX(0);
+    }
+
+    .section-header {
+      transform: translateX(0);
+    }
+
+    .section-info {
+      transform: translateX(0);
+    }
+  }
+}
+
+.section-works__container {
+  background-color: #eee;
+
+  .title {
+    color: #9ba9a9;
+    text-align: center;
+    transform: translateX(-1000px);
+    transition: transform $animDuration ease-in-out;
+  }
+
+  .grid {
+    margin-top: 16px;
+
+    .item {
+      transform: scale(0);
+      transition: transform $animDuration ease-in-out;
+
+      &:first-child {
+        // Mobile
+        @media only screen and (max-device-width: 768px) {
+          margin-left: 16px;
+        }
+        // Tablet
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1366px) {
+          margin-left: 16px;
+        }
+        // Desktop
+        @media only screen and (min-device-width: 1366px) {
+          margin-left: 32px;
+        }
+      }
+
+      &:nth-last-child(n + 2) {
+        margin-right: 16px;
+      }
+
+      & > div {
+        background-color: #fff;
+        display: block;
+      }
+
+      .brand__responsive {
+        // Mobile
+        @media only screen and (max-device-width: 768px) {
+          height: 128px;
+          max-height: 128px;
+          width: 128px;
+          max-width: 128px;
+          font-size: 13.5px;
+        }
+        // Tablet
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1366px) {
+          height: 192px;
+          max-height: 192px;
+          width: 192px;
+          max-width: 192px;
+          font-size: 20.5px;
+        }
+        // Desktop
+        @media only screen and (min-device-width: 1366px) {
+          height: 192px;
+          max-height: 192px;
+          width: 192px;
+          max-width: 192px;
+        }
+      }
+
+      .chorus {
+        content: url("../assets/img/chorus.png");
+      }
+
+      .cityflo {
+        content: url("../assets/img/cityflo.png");
+        // Mobile
+        @media only screen and (max-device-width: 768px) {
+          padding: 12px;
+        }
+        // Tablet
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1366px) and (orientation: landscape) {
+          padding: 16px;
+        }
+        // Desktop
+        @media only screen and (min-device-width: 1366px) {
+          padding: 20px;
+        }
+      }
+
+      .overlay {
+        background-color: rgba(0, 0, 0, 0.75);
+        color: #fff;
+        opacity: 0;
+        padding: 4px;
+        position: absolute;
+        transition: opacity 350ms ease-in-out;
+
+        .meta {
+          margin-left: 0;
+          margin-right: 0;
+          padding: 2px 4px 0 2px;
+
+          .info {
+            font-weight: 300;
+          }
+
+          .brand__container {
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            padding-bottom: 8px;
+
+            // Mobile
+            @media only screen and (max-device-width: 768px) {
+              width: 128px;
+              .brand {
+                font-size: 24px;
+              }
+            }
+            // Tablet
+            @media only screen and (min-device-width: 768px) and (max-device-width: 1366px) {
+              width: 192px;
+              .brand {
+                font-size: 32px;
+              }
+            }
+            // Desktop
+            @media only screen and (min-device-width: 1366px) {
+              width: 192px;
+              .brand {
+                font-size: 32px;
+              }
+            }
+
+            .brand {
+              color: #fff;
+
+              &:hover {
+                color: $primary;
+              }
+            }
+          }
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &.active {
+    .title {
+      transform: translateX(0);
+    }
+
+    .item {
+      transform: scale(1);
+    }
+  }
+}
