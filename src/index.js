@@ -11,6 +11,35 @@ function rebuildFpSection(fp) {
   return () => fp.reBuild();
 }
 
+function stylizeSideNav(destination) {
+  const color = destination === 0 ? "#fff" : "#000";
+  $("#fp-nav > ul > li").each((i, e) => {
+    $(e)
+      .find("a > span")
+      .css("background-color", color);
+    $(e)
+      .find(".fp-tooltip")
+      .css({ color: color, width: "auto" });
+    if (i === destination) {
+      $(e)
+        .find(".fp-tooltip")
+        .animate({ opacity: 1 }, 350, "swing", () =>
+          setTimeout(
+            () =>
+              $(e)
+                .find(".fp-tooltip")
+                .animate({ opacity: 0 }, 350),
+            750
+          )
+        );
+    } else {
+      $(e)
+        .find(".fp-tooltip")
+        .css({ width: "", opacity: "" });
+    }
+  });
+}
+
 $(document.body).append(resume);
 
 $(() => {
@@ -26,7 +55,9 @@ $(() => {
     scrollOverflowOptions: {
       scrollbars: false
     },
-    verticalCentered: true
+    verticalCentered: true,
+    afterRender: () => stylizeSideNav(0),
+    onLeave: (_, dest) => stylizeSideNav(dest.index)
   });
 
   $(".text-justify").expander({
