@@ -378,3 +378,35 @@ h4 {
     }
   }
 }
+
+.long-text {
+  display: none;
+}
+
+.short-text {
+  display: inline;
+}
+
+.text-dots {
+  display: inline;
+}
+
+.show-more-button {
+  cursor: pointer;
+  display: inline;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeout {
+  animation: fadeout 750ms ease-in-out;
+}

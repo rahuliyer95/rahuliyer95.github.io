@@ -5,44 +5,61 @@ require("./styles/index.scss");
 // js
 import "../node_modules/fullpage.js/vendors/scrolloverflow";
 import fullpage from "fullpage.js";
-import "../node_modules/jquery-expander/jquery.expander";
 
-function rebuildFpSection(fp) {
-  return () => fp.reBuild();
+function rebuildFpSection(element, fp) {
+  if (element.getAttribute("data-more") === "0") {
+    readMore(element);
+  } else {
+    readLess(element);
+  }
+  fp.reBuild();
+}
+
+function readMore(element) {
+  element.parentElement.querySelectorAll(".long-text")[0].style.display =
+    "inline";
+  element.parentElement.querySelectorAll(".text-dots")[0].style.display =
+    "none";
+  element.setAttribute("data-more", 1);
+  element.innerHTML = "Read Less";
+}
+
+function readLess(element) {
+  element.parentElement.querySelectorAll(".long-text")[0].style.display =
+    "none";
+  element.parentElement.querySelectorAll(".text-dots")[0].style.display =
+    "inline";
+  element.setAttribute("data-more", 0);
+  element.innerHTML = "Read More";
 }
 
 function stylizeSideNav(destination) {
   const color = destination === 0 ? "#fff" : "#000";
-  $("#fp-nav > ul > li").each((i, e) => {
-    $(e)
-      .find("a > span")
-      .css("background-color", color);
-    $(e)
-      .find(".fp-tooltip")
-      .css({ color: color, width: "auto" });
+  document.querySelectorAll("#fp-nav > ul > li").forEach((e, i) => {
+    e.querySelectorAll("a > span")[0].style["background-color"] = color;
+    const tooltip = e.querySelectorAll(".fp-tooltip")[0];
+    tooltip.style.color = color;
+    tooltip.style.width = "auto";
     if (i === destination) {
-      $(e)
-        .find(".fp-tooltip")
-        .animate({ opacity: 1 }, 350, "swing", () =>
-          setTimeout(
-            () =>
-              $(e)
-                .find(".fp-tooltip")
-                .animate({ opacity: 0 }, 350),
-            750
-          )
-        );
+      tooltip.style.opacity = 1;
+      setTimeout(() => {
+        tooltip.classList.add("fadeout");
+        setTimeout(() => {
+          tooltip.classList.remove("fadeout");
+          tooltip.style.opacity = "";
+          tooltip.style.width = "";
+        }, 500);
+      }, 1500);
     } else {
-      $(e)
-        .find(".fp-tooltip")
-        .css({ width: "", opacity: "" });
+      tooltip.style.width = "";
+      tooltip.style.opacity = "";
     }
   });
 }
 
-$(document.body).append(resume);
+document.body.innerHTML = resume;
 
-$(() => {
+document.addEventListener("DOMContentLoaded", () => {
   const fp = new fullpage("#fullpage", {
     licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
     anchors: ["home", "resume", "works"],
@@ -60,8 +77,9 @@ $(() => {
     onLeave: (_, dest) => stylizeSideNav(dest.index)
   });
 
-  $(".text-justify").expander({
-    afterExpand: rebuildFpSection(fp),
-    afterCollapse: rebuildFpSection(fp)
-  });
+  document
+    .querySelectorAll(".show-more-button")
+    .forEach(elem =>
+      elem.addEventListener("click", () => rebuildFpSection(elem, fp))
+    );
 });
