@@ -2,17 +2,34 @@
 const resume = require("./resume.html");
 // scss
 require("./styles/index.scss");
-// js
-import "../node_modules/fullpage.js/vendors/scrolloverflow";
-import fullpage from "fullpage.js";
 
-function rebuildFpSection(element, fp) {
+function matches(el, selector) {
+  return (
+    el.matches ||
+    el.matchesSelector ||
+    el.msMatchesSelector ||
+    el.mozMatchesSelector ||
+    el.webkitMatchesSelector ||
+    el.oMatchesSelector
+  ).call(el, selector);
+}
+
+function contains(nodeList, element) {
+  for (entry in nodeList.entries) {
+    debugger;
+    if (entry === element) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function toggleReadSection(element) {
   if (element.getAttribute("data-more") === "0") {
     readMore(element);
   } else {
     readLess(element);
   }
-  fp.reBuild();
 }
 
 function readMore(element) {
@@ -33,53 +50,84 @@ function readLess(element) {
   element.innerHTML = "Read More";
 }
 
-function stylizeSideNav(destination) {
-  const color = destination === 0 ? "#fff" : "#000";
-  document.querySelectorAll("#fp-nav > ul > li").forEach((e, i) => {
-    e.querySelectorAll("a > span")[0].style["background-color"] = color;
-    const tooltip = e.querySelectorAll(".fp-tooltip")[0];
-    tooltip.style.color = color;
-    tooltip.style.width = "auto";
-    if (i === destination) {
-      tooltip.style.opacity = 1;
-      setTimeout(() => {
-        tooltip.classList.add("fadeout");
-        setTimeout(() => {
-          tooltip.classList.remove("fadeout");
-          tooltip.style.opacity = "";
-          tooltip.style.width = "";
-        }, 500);
-      }, 1500);
+function setupNavigation() {
+  const navbar = document.querySelector("#navbar");
+  document.querySelectorAll("#navbar a[data-nav-section]").forEach(el => {
+    el.addEventListener("click", event => {
+      event.preventDefault();
+      const section = el.getAttribute("data-nav-section");
+      const targetEl = document.querySelector(`[data-section=${section}]`);
+      if (!!targetEl) {
+        targetEl.scrollIntoView({
+          block: 'start',
+          behavior: 'smooth'
+        });
+      }
+
+      if (matches(navbar, ":not([hidden])")) {
+        navbar.classList.remove("in");
+        const ariaExpanded = document.createAttribute("aria-expanded");
+        ariaExpanded.value = false;
+        navbar.attributes.setNamedItem(ariaExpanded);
+        document
+          .querySelector(".js-colorlib-nav-toggle")
+          .classList.remove("active");
+      }
+
+      return false;
+    });
+  });
+}
+
+function setupHamburgerMenu() {
+  const hamburger = document.querySelector(".js-colorlib-nav-toggle");
+  hamburger.addEventListener("click", event => {
+    event.preventDefault();
+
+    if (document.body.classList.contains("offcanvas")) {
+      hamburger.classList.remove("active");
+      document.body.classList.remove("offcanvas");
     } else {
-      tooltip.style.width = "";
-      tooltip.style.opacity = "";
+      hamburger.classList.add("active");
+      document.body.classList.add("offcanvas");
     }
   });
+}
+
+function setupSidebarMobileSupport() {
+  document.addEventListener("click", e => {
+    const container = document.querySelectorAll(
+      "#colorlib-aside, .js-colorlib-nav-toggle"
+    );
+    if (
+      container !== e.target &&
+      contains(container, e.target) &&
+      document.body.classList.contains("offcanvas")
+    ) {
+      document.body.classList.remove("offcanvas");
+      document
+        .querySelector(".js-colorlib-nav-toggle")
+        .classList.remove("active");
+    }
+  });
+
+  window.onscroll = () => {
+    if (document.body.classList.contains("offcanvas")) {
+      document.body.classList.remove("offcanvas");
+      document
+        .querySelector(".js-colorlib-nav-toggle")
+        .classList.remove("active");
+    }
+  };
 }
 
 document.body.innerHTML = resume;
 
 document.addEventListener("DOMContentLoaded", () => {
-  const fp = new fullpage("#fullpage", {
-    licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
-    anchors: ["home", "resume", "works"],
-    autoScrolling: true,
-    navigation: true,
-    navigationPosition: "right",
-    navigationTooltips: ["Home", "Resume", "Works"],
-    scrollingSpeed: 750,
-    scrollOverflow: true,
-    scrollOverflowOptions: {
-      scrollbars: false
-    },
-    verticalCentered: true,
-    afterRender: () => stylizeSideNav(0),
-    onLeave: (_, dest) => stylizeSideNav(dest.index)
-  });
-
   document
     .querySelectorAll(".show-more-button")
-    .forEach(elem =>
-      elem.addEventListener("click", () => rebuildFpSection(elem, fp))
-    );
+    .forEach(el => el.addEventListener("click", () => toggleReadSection(el)));
+  setupHamburgerMenu();
+  setupNavigation();
+  setupSidebarMobileSupport();
 });

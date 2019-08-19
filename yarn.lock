@@ -86,16 +86,6 @@
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
 
-"@types/fullpage.js@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@types/fullpage.js/-/fullpage.js-2.9.0.tgz#0e39d0df7b05c87a5f65ac487906e426142e186b"
-  dependencies:
-    "@types/jquery" "*"
-
-"@types/jquery@*":
-  version "3.3.5"
-  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.5.tgz#75cfec8c5ee38355d14296ada7e7e2fb8bd3ac2f"
-
 "@types/node@*":
   version "10.5.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.5.5.tgz#8e84d24e896cd77b0d4f73df274027e3149ec2ba"
@@ -3088,10 +3078,6 @@ fstream@^1.0.0, fstream@^1.0.2:
     inherits "~2.0.0"
     mkdirp ">=0.5 0"
     rimraf "2"
-
-fullpage.js@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/fullpage.js/-/fullpage.js-3.0.2.tgz#4a38e8ac5be5ebf2d9631dc462468255adaa110e"
 
 function-bind@^1.1.0, function-bind@^1.1.1:
   version "1.1.1"
