@@ -1,5 +1,6 @@
 const path = require("path");
 const glob = require("glob");
+const CrittersWebpackPlugin = require("critters-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -149,6 +150,10 @@ module.exports = webpackMerge(commonConfig, {
         yandex: false,
         windows: false
       }
+    }),
+    new CrittersWebpackPlugin({
+      preload: 'swap',
+      preloadFonts: true
     })
   ]
 });
