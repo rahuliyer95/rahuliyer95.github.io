@@ -15,7 +15,6 @@
     "babel-preset-env": "^1.7.0",
     "clean-webpack-plugin": "^0.1.19",
     "critical": "^1.3.2",
-    "critters-webpack-plugin": "^2.4.0",
     "css-loader": "^1.0.0",
     "cssnano": "^4.0.5",
     "favicons-webpack-plugin": "^1.0.1",
