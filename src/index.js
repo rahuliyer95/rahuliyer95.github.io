@@ -16,7 +16,6 @@ function matches(el, selector) {
 
 function contains(nodeList, element) {
   for (entry in nodeList.entries) {
-    debugger;
     if (entry === element) {
       return true;
     }
