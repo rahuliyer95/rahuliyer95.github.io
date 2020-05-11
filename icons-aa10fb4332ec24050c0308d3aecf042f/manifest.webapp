@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "name": "rahuliyer-me",
+  "description": "Website",
+  "icons": {
+    "60": "/icons-aa10fb4332ec24050c0308d3aecf042f/firefox_app_60x60.png",
+    "128": "/icons-aa10fb4332ec24050c0308d3aecf042f/firefox_app_128x128.png",
+    "512": "/icons-aa10fb4332ec24050c0308d3aecf042f/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": "Rahul Iyer",
+    "url": null
+  }
+}
