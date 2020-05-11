@@ -1,7 +1,6 @@
 version: 2.1
 orbs:
   node: circleci/node@1.1.6
-  puppeteer: threetreeslight/puppeteer@0.1.2
 jobs:
   build-and-deploy:
     executor:
@@ -35,6 +34,7 @@ jobs:
             mv public /tmp/public
             git checkout master
             rm -rf *
+            git checkout CNAME
             mv /tmp/public/* .
             git config user.email "$GITHUB_EMAIL"
             git config user.name "Rahul Iyer"
