@@ -127,6 +127,10 @@ h3 {
   height: 150px;
   margin: 0 auto;
   margin-bottom: 30px;
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
 }
 
 #colorlib-aside .position {
