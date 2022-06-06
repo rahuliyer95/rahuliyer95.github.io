@@ -1,7 +1,8 @@
-const webpack = require("webpack");
-
 module.exports = {
   entry: "./src/index.js",
+  output: {
+    assetModuleFilename: "[path][name].[ext]",
+  },
   module: {
     rules: [
       {
@@ -9,31 +10,23 @@ module.exports = {
         exclude: /node_modules/,
         loader: "babel-loader",
         options: {
-          presets: ["env"]
-        }
+          presets: ["@babel/preset-env"],
+        },
       },
       {
         // Load all images as base64 encoding if they are smaller than 8192 bytes
         test: /\.(png|jpe?g|gif|webp)$/,
-        use: [
-          {
-            loader: "url-loader",
-            options: {
-              name: "[path][name].[ext]",
-              limit: 8192
-            }
-          }
-        ]
+        type: "asset",
       },
       {
         test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: "url-loader?limit=10000"
+        type: "asset",
       },
       {
         test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
-        use: "file-loader"
-      }
-    ]
+        type: "asset",
+      },
+    ],
   },
-  plugins: []
+  plugins: [],
 };

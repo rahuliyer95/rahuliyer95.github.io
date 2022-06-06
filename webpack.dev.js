@@ -1,13 +1,15 @@
 const path = require("path");
-const webpackMerge = require("webpack-merge");
+const { merge } = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const commonConfig = require("./webpack.common.js");
 
-module.exports = webpackMerge(commonConfig, {
+module.exports = merge(commonConfig, {
   devtool: "eval-cheap-module-source-map",
   devServer: {
     port: 4200,
-    contentBase: path.join(__dirname, "dist")
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
   },
   module: {
     rules: [
@@ -15,44 +17,44 @@ module.exports = webpackMerge(commonConfig, {
         test: /\.html$/,
         use: [
           {
-            loader: "html-loader"
-          }
-        ]
+            loader: "html-loader",
+            options: {
+              esModule: false,
+            },
+          },
+        ],
       },
       {
-        test: /\.(scss|css)$/,
+        test: /\.(sass|scss|css)$/,
         use: [
           {
             // creates style nodes from JS strings
             loader: "style-loader",
-            options: {
-              sourceMap: true
-            }
           },
           {
             // translates CSS into CommonJS
             loader: "css-loader",
             options: {
-              sourceMap: true
-            }
+              sourceMap: true,
+            },
           },
           {
             // compiles Sass to CSS
             loader: "sass-loader",
             options: {
-              outputStyle: "expanded",
+              sassOptions: {
+                outputStyle: "expanded",
+              },
               sourceMap: true,
-              sourceMapContents: true
-            }
-          }
-        ]
-      }
-    ]
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
-      inject: true
-    })
-  ]
+      template: path.join(__dirname, "src", "index.html"),
+    }),
+  ],
 });
