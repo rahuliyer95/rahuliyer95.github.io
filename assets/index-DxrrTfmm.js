@@ -1,0 +1,445 @@
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))s(n);new MutationObserver(n=>{for(const a of n)if(a.type==="childList")for(const i of a.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&s(i)}).observe(document,{childList:!0,subtree:!0});function o(n){const a={};return n.integrity&&(a.integrity=n.integrity),n.referrerPolicy&&(a.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?a.credentials="include":n.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function s(n){if(n.ep)return;n.ep=!0;const a=o(n);fetch(n.href,a)}})();const r=`<body>
+	<div id="colorlib-page">
+		<div class="container-wrap">
+			<!-- Navbar wrap -->
+			<a href="#"
+			   class="js-colorlib-nav-toggle colorlib-nav-toggle"
+			   data-toggle="collapse"
+			   data-target="#navbar"
+			   aria-expanded="false"
+			   aria-controls="navbar"><i></i></a>
+			<!-- Navigation -->
+			<aside id="colorlib-aside"
+				   role="complementary"
+				   class="js-fullheight">
+				<!-- Name -->
+				<div class="text-center">
+					<img class="author-img"
+						 alt="Profile Picture"
+						 src="/img/profile-pic.png">
+					<h1 id="colorlib-logo">
+						<span>Rahul Iyer</span>
+					</h1>
+					<p>
+						<strong>Software Engineer @Twitter</strong>
+					</p>
+				</div>
+				<!-- Menu -->
+				<nav id="colorlib-main-menu"
+					 role="navigation"
+					 class="navbar">
+					<div id="navbar"
+						 class="collapse">
+						<ul>
+							<li><a href="#"
+								   data-nav-section="about">About</a></li>
+							<li><a href="#"
+								   data-nav-section="education">Education</a></li>
+							<li><a href="#"
+								   data-nav-section="experience">Experience</a></li>
+							<!-- Footer -->
+							<a href="https://twitter.com/@rahuliyer95"
+							   target="_blank"
+							   rel="noopener"
+							   class="fab fa-twitter brand"></a> &nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="https://go.rahuliyer.me/linkedin"
+							   target="_blank"
+							   rel="noopener"
+							   class="fab fa-linkedin brand"></a> &nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="https://go.rahuliyer.me/github"
+							   target="_blank"
+							   rel="noopener"
+							   class="fab fa-github brand"></a> &nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="mailto:rahul_iyer@ncsu.edu"
+							   target="_blank"
+							   rel="noopener"
+							   class="fas fa-envelope brand"></a>
+						</ul>
+					</div>
+				</nav>
+			</aside>
+			<!-- Main -->
+			<div id="colorlib-main">
+				<!-- About Me -->
+				<section class="colorlib-about"
+						 data-section="about">
+					<div class="colorlib-narrow-content">
+						<div class="row card">
+							<div class="col-md-12">
+								<div class="row row-bottom-padded-sm">
+									<div class="col-md-12">
+										<div class="about-desc">
+											<h2>About Me</h2>
+											<p>
+												Passionate about building useful software, technology and gaming. Enjoy
+												binge watching TV
+												series and movies.
+											</p>
+										</div>
+									</div>
+									<!-- Resume -->
+									<div class="col-md-12 resume">
+										<a href="https://go.rahuliyer.me/resume"
+										   class="btn-download"
+										   rel="noopener"
+										   target="_blank">
+											<i class="fas fa-cloud-download-alt"></i>
+											Resume
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+				</section>
+
+				<!-- Education -->
+				<section class="colorlib-education"
+						 data-section="education">
+					<div class="colorlib-narrow-content">
+						<div class="row card">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3">
+								<h2>Education</h2>
+							</div>
+							<div class="col-md-12">
+								<div class="education-content">
+									<h5>North Carolina State University</h5>
+									<span style="font-style: italic">Masters of Science &#8210; M.S, Computer
+										Science</span>
+									<span>&#8226;</span>
+									<span>2018 &#8210; 2019</span>
+								</div>
+								<div class="education-content">
+									<h5>Veermata Jijabai Technological Institute</h5>
+									<span style="font-style: italic">Bachelor of Technology &#8210; B.Tech, Computer
+										Engineering</span>
+									<span>&#8226;</span>
+									<span>2012 &#8210; 2016</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Experience -->
+				<section class="colorlib-experience"
+						 data-section="experience">
+					<div class="colorlib-narrow-content">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3">
+								<h2>Experience</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="timeline-centered">
+									<!-- Twitter Inc. -->
+									<article class="timeline-entry">
+										<div class="timeline-entry-inner">
+											<div class="timeline-icon color-blue">
+												<i class="fab fa-twitter brand"></i>
+											</div>
+											<div class="timeline-label">
+												<h2>
+													Twitter Inc.
+													<br>
+													<span>Software Engineer II</span>
+													<span>&#8226;</span>
+													<span>Feb 2020</span>
+												</h2>
+												<p>
+													<span class="short-text">
+														I have joined Twitter as a Software Engineer
+														- II, working with the Revenue Site Reliability
+														Engineering team.
+													</span>
+													<!-- <span class="long-text">
+													</span>
+													<span class="text-dots">...</span>
+													<span class="btn-link show-more-button"
+														  data-more="0">Read More</span> -->
+												</p>
+											</div>
+										</div>
+									</article>
+
+
+									<!-- Twitter Inc. (internship) -->
+									<article class="timeline-entry">
+										<div class="timeline-entry-inner">
+											<div class="timeline-icon color-blue">
+												<i class="fab fa-twitter brand"></i>
+											</div>
+											<div class="timeline-label">
+												<h2>
+													Twitter Inc.
+													<br>
+													<span>Software Engineering Intern</span>
+													<span>&#8226;</span>
+													<span>May 2019 - August 2019</span>
+												</h2>
+												<p>
+													<span class="short-text">
+														In the Summer of 2019, I worked as a
+														<strong>Software Engineering</strong> Intern
+														at Twitter.
+														I primarily worked on automating the
+														<strong>Service Maturity Model</strong>
+														evaluation,
+													</span>
+													<span class="long-text">
+														which improved the evaluation execution time
+														by <strong>75%</strong>. To accomplish the task I developed a
+														<strong>Scala CLI</strong>
+														application using frameworks like <strong>
+															Guice, Finatra, JSoup, Jackson</strong>, etc.
+														I also personally made three notable contributions
+														to <strong>Finatra</strong> by adding functionality and fixing
+														two long-standing issues. Working with some of
+														the brightest minds allowed me to get
+														hands-on experience on understanding how
+														large systems are seamlessly deployed without
+														downtime while serving an internet-scale audience.
+													</span>
+													<span class="text-dots">...</span>
+													<span class="btn-link show-more-button"
+														  data-more="0">Read More</span>
+												</p>
+											</div>
+										</div>
+									</article>
+
+									<!-- Research Assistant, NCSU -->
+									<!-- <article class="timeline-entry">
+										<div class="timeline-entry-inner">
+											<div class="timeline-icon color-red">
+												<i class="fas fa-code brand"></i>
+											</div>
+											<div class="timeline-label">
+												<h2>
+													North Carolina State University
+													<br>
+													<span>Graduate Research Assistant</span>
+													<span>&#8226;</span>
+													<span>January 2019 - May 2019</span>
+												</h2>
+												<p></p>
+											</div>
+										</div>
+									</article> -->
+
+									<!-- Morgan Stanley -->
+									<article class="timeline-entry">
+										<div class="timeline-entry-inner">
+											<div class="timeline-icon color-blue">
+												<i class="fas fa-code"></i>
+											</div>
+											<div class="timeline-label">
+												<h2>
+													Morgan Stanley
+													<br>
+													<span>Senior Associate</span>
+													<span>&#8226;</span>
+													<span>August 2016 - July 2018</span>
+												</h2>
+												<p>
+													<span class="short-text">
+														Post graduation, I worked as an
+														<strong>Analyst</strong> at Morgan Stanley. In its patented
+														<strong>Technology Analyst Program,
+														</strong>
+													</span>
+													<span class="long-text">I created a tool which allowed the users to
+														monitor disk usage using low-level system calls
+														using
+														<strong>eBPF</strong> (extended Berkley Packet Filters) and
+														<strong>BCC tools</strong>. My project was selected in the top
+														three amongst twenty-five extraordinary
+														projects and I was also awarded the
+														<strong>Creative Thinker Award</strong> during the program. As a
+														<strong>Senior Associate</strong>, I have been working with
+														<strong>Quality Assurance &amp; Production Management
+															(QAPM)</strong> team as a part of their
+														batch management efforts. I created various tools that would
+														help users efficiently manage
+														the batch, including UI elements allowing users to access
+														various reports and identify
+														blockers in the batch, if any. I also performed complex graph
+														operations like determining
+														the state of the world of the batch by superimposing the graph
+														from the past with the
+														current state. I made use of various technologies like
+														<strong>Scala, Hazelcast, HTML, CSS, &amp; Tyepscript</strong>
+														in combination with frameworks like
+														<strong>Angular, Bootstrap, d3.js, &amp; Highcharts</strong>
+														which transcends the entire spectrum
+														of full-stack application development.
+													</span>
+													<span class="text-dots">...</span>
+													<span class="btn-link show-more-button"
+														  data-more="0">Read More</span>
+												</p>
+											</div>
+										</div>
+									</article>
+
+									<!-- Cityflo -->
+									<article class="timeline-entry">
+										<div class="timeline-entry-inner">
+											<div class="timeline-icon color-yellow">
+												<img alt="Cityflo"
+													 class="brand__responsive cityflo">
+											</div>
+											<div class="timeline-label">
+												<h2>
+													Cityflo
+													<br>
+													<span>Android &amp; iOS Lead</span>
+													<span>&#8226;</span>
+													<span>September 2015 - July 2016</span>
+												</h2>
+												<p>
+													<span class="short-text">
+														During my final year, I had the opportunity to do a part-time
+														internship with Cityflo &#8210; a travel services based
+														start-up.
+													</span>
+													<span class="long-text">
+														I architected and developed both the
+														<strong>Android</strong> &amp;
+														<strong>iOS</strong> applications which allowed commuters to
+														book rides, track their and receive
+														various deals the company had to offer. I also created a
+														standalone mobile application
+														for tracking Cityflo's buses which used
+														<strong>Geofences</strong>, a part of the
+														<strong>Location Services API</strong>, which allowed me to
+														create hotspots around various bus
+														stops in the city. I used various technologies and APIs like
+														<strong>RxJava, Dagger, Retrofit, Gson, etc.</strong>
+														I developed an automated integration testing suite using
+														<strong>Roboelectric and XCTestSuite</strong> for Android &amp;
+														iOS applications.
+													</span>
+													<span class="text-dots">...</span>
+													<span class="btn-link show-more-button"
+														  data-more="0">Read More</span>
+												</p>
+												<div style="font-size: 24px">
+													<a href="https://go.rahuliyer.me/cityflo-android"
+													   target="_blank"
+													   rel="noopener">
+														<i class="fab fa-google-play brand"></i>
+													</a>
+													<a href="https://go.rahuliyer.me/cityflo-ios"
+													   target="_blank"
+													   rel="noopener">
+														<i class="fab fa-app-store-ios brand"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</article>
+
+									<!-- Samsung -->
+									<article class="timeline-entry">
+										<div class="timeline-entry-inner">
+											<div class="timeline-icon color-blue">
+												<i class="fas fa-code"></i>
+											</div>
+											<div class="timeline-label">
+												<h2>
+													Samsung R&amp;D Institute, Bengaluru
+													<br>
+													<span>Student Trainee</span>
+													<span>&#8226;</span>
+													<span>May 2015 - July 2015</span>
+												</h2>
+												<p>
+													<span class="short-text">
+														I got my first break into the software industry when I got an
+														internship at the Samsung R&amp;D Institute, Bengaluru.
+													</span>
+													<span class="long-text">
+														I was engaged in the Digital Solutions team wherein I created an
+														<strong>automated testing framework</strong> for the hardware IP
+														chips manufactured by Samsung.
+														I made the tool in
+														<storng>Java</storng>, the UI using the
+														<strong>Swings</strong> framework, and incorporated various
+														features like creating customized
+														test cases, running batch tests, and generating reports from the
+														tests through various
+														charts. I also played a vital role in integrating the tool in
+														the India division of the
+														Digital Solutions team.
+													</span>
+													<span class="text-dots">...</span>
+													<span class="btn-link show-more-button"
+														  data-more="0">Read More</span>
+												</p>
+											</div>
+										</div>
+									</article>
+
+									<!-- Chorus -->
+									<article class="timeline-entry">
+										<div class="timeline-entry-inner">
+											<div class="timeline-icon color-blue">
+												<i class="fas fa-code"></i>
+											</div>
+											<div class="timeline-label">
+												<h2>
+													Chorus
+												</h2>
+												<p>
+													<span class="short-text">
+														I started my software development journey during my
+														undergraduate years with my first <strong>
+															cross-platform mobile
+															application
+														</strong> named Chorus.
+													</span>
+													<span class="long-text">
+														I learned extensively about how
+														<strong>Android and iOS</strong> operating systems work and how
+														to make an application with good UX. The application has
+														garnered around a <strong>quarter million downloads</strong>
+														across both Android and iOS platforms.
+													</span>
+													<span class="text-dots">...</span>
+													<span class="btn-link show-more-button"
+														  data-more="0">Read More</span>
+												</p>
+												<div style="font-size: 24px">
+													<a href="https://go.rahuliyer.me/chorus-android"
+													   target="_blank"
+													   rel="noopener">
+														<i class="fab fa-google-play brand"></i>
+													</a>
+													<a href="https://go.rahuliyer.me/chorus-ios"
+													   target="_blank"
+													   rel="noopener">
+														<i class="fab fa-app-store-ios brand"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</article>
+
+									<!-- End -->
+									<article class="timeline-entry">
+										<div class="timeline-entry-inner">
+											<div class="timeline-icon color-none">
+											</div>
+										</div>
+									</article>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</body>
+`;function l(t,e){return(t.matches||t.matchesSelector||t.msMatchesSelector||t.mozMatchesSelector||t.webkitMatchesSelector||t.oMatchesSelector).call(t,e)}function c(t,e){for(entry in t.entries)if(entry===e)return!0;return!1}function d(t){t.getAttribute("data-more")==="0"?p(t):u(t)}function p(t){t.parentElement.querySelectorAll(".long-text")[0].style.display="inline",t.parentElement.querySelectorAll(".text-dots")[0].style.display="none",t.setAttribute("data-more",1),t.innerHTML="Read Less"}function u(t){t.parentElement.querySelectorAll(".long-text")[0].style.display="none",t.parentElement.querySelectorAll(".text-dots")[0].style.display="inline",t.setAttribute("data-more",0),t.innerHTML="Read More"}function g(){const t=document.querySelector("#navbar");document.querySelectorAll("#navbar a[data-nav-section]").forEach(e=>{e.addEventListener("click",o=>{o.preventDefault();const s=e.getAttribute("data-nav-section"),n=document.querySelector(`[data-section=${s}]`);if(n&&n.scrollIntoView({block:"start",behavior:"smooth"}),l(t,":not([hidden])")){t.classList.remove("in");const a=document.createAttribute("aria-expanded");a.value=!1,t.attributes.setNamedItem(a),document.querySelector(".js-colorlib-nav-toggle").classList.remove("active")}return!1})})}function m(){const t=document.querySelector(".js-colorlib-nav-toggle");t.addEventListener("click",e=>{e.preventDefault(),document.body.classList.contains("offcanvas")?(t.classList.remove("active"),document.body.classList.remove("offcanvas")):(t.classList.add("active"),document.body.classList.add("offcanvas"))})}function h(){document.addEventListener("click",t=>{const e=document.querySelectorAll("#colorlib-aside, .js-colorlib-nav-toggle");e!==t.target&&c(e,t.target)&&document.body.classList.contains("offcanvas")&&(document.body.classList.remove("offcanvas"),document.querySelector(".js-colorlib-nav-toggle").classList.remove("active"))}),window.onscroll=()=>{document.body.classList.contains("offcanvas")&&(document.body.classList.remove("offcanvas"),document.querySelector(".js-colorlib-nav-toggle").classList.remove("active"))}}document.getElementById("app").innerHTML=r;document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".show-more-button").forEach(t=>t.addEventListener("click",()=>d(t))),m(),g(),h()});
