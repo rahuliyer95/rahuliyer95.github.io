@@ -1,7 +1,7 @@
 // html
-const resume = require("./resume.html");
+import * as resume from "./resume.html?raw";
 // scss
-require("./styles/index.scss");
+import "./styles/index.scss";
 
 function matches(el, selector) {
   return (
@@ -51,15 +51,15 @@ function readLess(element) {
 
 function setupNavigation() {
   const navbar = document.querySelector("#navbar");
-  document.querySelectorAll("#navbar a[data-nav-section]").forEach(el => {
-    el.addEventListener("click", event => {
+  document.querySelectorAll("#navbar a[data-nav-section]").forEach((el) => {
+    el.addEventListener("click", (event) => {
       event.preventDefault();
       const section = el.getAttribute("data-nav-section");
       const targetEl = document.querySelector(`[data-section=${section}]`);
       if (!!targetEl) {
         targetEl.scrollIntoView({
-          block: 'start',
-          behavior: 'smooth'
+          block: "start",
+          behavior: "smooth",
         });
       }
 
@@ -80,7 +80,7 @@ function setupNavigation() {
 
 function setupHamburgerMenu() {
   const hamburger = document.querySelector(".js-colorlib-nav-toggle");
-  hamburger.addEventListener("click", event => {
+  hamburger.addEventListener("click", (event) => {
     event.preventDefault();
 
     if (document.body.classList.contains("offcanvas")) {
@@ -94,7 +94,7 @@ function setupHamburgerMenu() {
 }
 
 function setupSidebarMobileSupport() {
-  document.addEventListener("click", e => {
+  document.addEventListener("click", (e) => {
     const container = document.querySelectorAll(
       "#colorlib-aside, .js-colorlib-nav-toggle"
     );
@@ -120,12 +120,12 @@ function setupSidebarMobileSupport() {
   };
 }
 
-document.body.innerHTML = resume;
+document.getElementById("app").innerHTML = resume.default;
 
 document.addEventListener("DOMContentLoaded", () => {
   document
     .querySelectorAll(".show-more-button")
-    .forEach(el => el.addEventListener("click", () => toggleReadSection(el)));
+    .forEach((el) => el.addEventListener("click", () => toggleReadSection(el)));
   setupHamburgerMenu();
   setupNavigation();
   setupSidebarMobileSupport();
