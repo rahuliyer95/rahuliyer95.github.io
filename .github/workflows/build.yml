@@ -11,10 +11,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: oven-sh/bun@v2
+      - uses: oven-sh/setup-bun@v2
         with:
           bun-version: "1.1.25"
       - name: Install dependencies
         run: bun install
       - name: Build
         run: bun run prod
+      - name: Upload
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          COMMIT_MESSAGE="$(git log -1 --pretty=%s)"
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          git checkout master
+          cp -rf src/dist/* .
+          git add .
+          git commit -m "[skip ci]: $COMMIT_MESSAGE"
+          git push "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
