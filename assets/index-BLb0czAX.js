@@ -1,0 +1,542 @@
+(function(){let e=document.createElement(`link`).relList;if(e&&e.supports&&e.supports(`modulepreload`))return;for(let e of document.querySelectorAll(`link[rel="modulepreload"]`))n(e);new MutationObserver(e=>{for(let t of e)if(t.type===`childList`)for(let e of t.addedNodes)e.tagName===`LINK`&&e.rel===`modulepreload`&&n(e)}).observe(document,{childList:!0,subtree:!0});function t(e){let t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),t.credentials=e.crossOrigin===`use-credentials`?`include`:e.crossOrigin===`anonymous`?`omit`:`same-origin`,t}function n(e){if(e.ep)return;e.ep=!0;let n=t(e);fetch(e.href,n)}})();var e=`<body>
+	<div id="colorlib-page">
+		<div class="container-wrap">
+			<!-- Navbar wrap -->
+			<a href="#"
+			   class="js-colorlib-nav-toggle colorlib-nav-toggle"
+			   data-toggle="collapse"
+			   data-target="#navbar"
+			   aria-expanded="false"
+			   aria-controls="navbar"><i></i></a>
+			<!-- Navigation -->
+			<aside id="colorlib-aside"
+				   role="complementary"
+				   class="js-fullheight">
+				<!-- Name -->
+				<div class="text-center">
+					<img class="author-img"
+						 alt="Profile Picture"
+						 src="/img/profile-pic.jpg">
+					<h1 id="colorlib-logo">
+						<span>Rahul Iyer</span>
+					</h1>
+					<p>
+						<strong>Software Engineer @Apple</strong>
+					</p>
+				</div>
+				<!-- Menu -->
+				<nav id="colorlib-main-menu"
+					 role="navigation"
+					 class="navbar">
+					<div id="navbar"
+						 class="collapse">
+						<ul>
+							<li><a href="#"
+								   data-nav-section="about">About</a></li>
+							<li><a href="#"
+								   data-nav-section="education">Education</a></li>
+							<li><a href="#"
+								   data-nav-section="experience">Experience</a></li>
+							<!-- Footer -->
+							<a href="https://twitter.com/@rahuliyer95"
+							   target="_blank"
+							   rel="noopener"
+							   class="brand"
+							   aria-label="Twitter"><svg class="icon" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M459.4 151.7c.3 4.5 .3 9.1 .3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103l0-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53 51.7 63.7 129.3 105.3 216.4 109.8-1.6-7.8-2.6-15.9-2.6-24 0-57.8 46.8-104.9 104.9-104.9 30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3z"/></svg></a> &nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="https://go.rahuliyer.me/linkedin"
+							   target="_blank"
+							   rel="noopener"
+							   class="brand"
+							   aria-label="LinkedIn"><svg class="icon" viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M416 32L31.9 32C14.3 32 0 46.5 0 64.3L0 447.7C0 465.5 14.3 480 31.9 480L416 480c17.6 0 32-14.5 32-32.3l0-383.4C448 46.5 433.6 32 416 32zM135.4 416l-66.4 0 0-213.8 66.5 0 0 213.8-.1 0zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77zM384.3 416l-66.4 0 0-104c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9l0 105.8-66.4 0 0-213.8 63.7 0 0 29.2 .9 0c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9l0 117.2z"/></svg></a> &nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="https://go.rahuliyer.me/github"
+							   target="_blank"
+							   rel="noopener"
+							   class="brand"
+							   aria-label="GitHub"><svg class="icon" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M216.5 362.5c-66-8-112.5-55.5-112.5-117 0-25 9-52 24-70-6.5-16.5-5.5-51.5 2-66 20-2.5 47 8 63 22.5 19-6 39-9 63.5-9s44.5 3 62.5 8.5c15.5-14 43-24.5 63-22 7 13.5 8 48.5 1.5 65.5 16 19 24.5 44.5 24.5 70.5 0 61.5-46.5 108-113.5 116.5 17 11 28.5 35 28.5 62.5l0 52C323 491.5 335.5 500 350.5 494 441 459.5 512 369 512 257 512 115.5 397 0 255.5 0S0 115.5 0 257c0 111 70.5 203 165.5 237.5 13.5 5 26.5-4 26.5-17.5l0-40c-7 3-16 5-24 5-33 0-52.5-18-66.5-51.5-5.5-13.5-11.5-21.5-23-23-6-.5-8-3-8-6 0-6 10-10.5 20-10.5 14.5 0 27 9 40 27.5 10 14.5 20.5 21 33 21s20.5-4.5 32-16c8.5-8.5 15-16 21-21z"/></svg></a> &nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="mailto:me@rahuliyer.me"
+							   target="_blank"
+							   rel="noopener"
+							   class="brand"
+							   aria-label="Email"><svg class="icon" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M48 64c-26.5 0-48 21.5-48 48 0 15.1 7.1 29.3 19.2 38.4l208 156c17.1 12.8 40.5 12.8 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48L48 64zM0 196L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-188-198.4 148.8c-34.1 25.6-81.1 25.6-115.2 0L0 196z"/></svg></a>
+						</ul>
+					</div>
+				</nav>
+			</aside>
+			<!-- Main -->
+			<div id="colorlib-main">
+				<!-- About Me -->
+				<section class="colorlib-about"
+						 data-section="about">
+					<div class="colorlib-narrow-content">
+						<div class="row card">
+							<div class="col-md-12">
+								<div class="row row-bottom-padded-sm">
+									<div class="col-md-12">
+										<div class="about-desc">
+											<h2>About Me</h2>
+											<p>
+												Passionate about building useful software, technology and gaming. Outside
+												of work, you'll find me
+												scuba diving, skiing, or catching up on TV series and movies.
+											</p>
+										</div>
+									</div>
+									<!-- Resume -->
+									<div class="col-md-12 resume">
+										<a href="https://go.rahuliyer.me/resume"
+										   class="btn-download"
+										   rel="noopener"
+										   target="_blank">
+											<svg class="icon" viewBox="0 0 576 512" aria-hidden="true"><path fill="currentColor" d="M144 480c-79.5 0-144-64.5-144-144 0-63.4 41-117.2 97.9-136.5-1.3-7.7-1.9-15.5-1.9-23.5 0-79.5 64.5-144 144-144 55.4 0 103.5 31.3 127.6 77.1 14.2-8.3 30.8-13.1 48.4-13.1 53 0 96 43 96 96 0 15.7-3.8 30.6-10.5 43.7 44 20.3 74.5 64.7 74.5 116.3 0 70.7-57.3 128-128 128l-304 0zM377 313c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-31 31 0-102.1c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 102.1-31-31c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l72 72c9.4 9.4 24.6 9.4 33.9 0l72-72z"/></svg>
+											<span class="btn-download__label">Resume</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+				</section>
+
+				<!-- Education -->
+				<section class="colorlib-education"
+						 data-section="education">
+					<div class="colorlib-narrow-content">
+						<div class="row card">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3">
+								<h2>Education</h2>
+							</div>
+							<div class="col-md-12">
+								<div class="education-content">
+									<h5>North Carolina State University</h5>
+									<span style="font-style: italic">Masters of Science &#8210; M.S, Computer
+										Science</span>
+									<span>&#8226;</span>
+									<span>2018 &#8210; 2019</span>
+								</div>
+								<div class="education-content">
+									<h5>Veermata Jijabai Technological Institute</h5>
+									<span style="font-style: italic">Bachelor of Technology &#8210; B.Tech, Computer
+										Engineering</span>
+									<span>&#8226;</span>
+									<span>2012 &#8210; 2016</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Experience -->
+				<section class="colorlib-experience"
+						 data-section="experience">
+					<div class="colorlib-narrow-content">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3">
+								<h2>Experience</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="timeline-centered">
+									<!-- Apple Inc. -->
+									<article class="timeline-entry">
+										<div class="timeline-entry-inner">
+											<div class="timeline-icon color-black">
+												<svg class="icon brand" viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M319.1 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7-55.8 .9-115.1 44.5-115.1 133.2 0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zM262.5 104.5c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+											</div>
+											<div class="timeline-label">
+												<h2>
+													Apple Inc.
+													<br>
+													<span>Staff Software Engineer</span>
+													<span>&#8226;</span>
+													<span>August 2022 - Present</span>
+												</h2>
+												<p>
+													<span class="short-text">
+														I joined Apple's iCloud org, where I lead development of a
+														<strong>GenAI-powered real-time incident-analysis assistant</strong>
+														and am a core contributor to Apple's internal GenAI platform,
+														used by more than <strong>20,000</strong> daily users.
+													</span>
+													<span class="long-text">
+														I ran community office hours to drive platform adoption and
+														enabled Siri engineering integrations that shipped the new Siri
+														across iOS, iPadOS, macOS, and tvOS 27. I built
+														<strong>MCP servers</strong> for observability and log-search
+														systems, enabling secure LLM-driven operational workflows used
+														across Apple engineering. I also built deployment,
+														fleet-telemetry, dashboarding, and production-alerting
+														infrastructure from scratch for
+														<strong>Private Cloud Compute</strong> serving Foundation Models.
+														Separately, I built the inference server for Photos Spatial
+														Reframing, where I debugged and pinpointed a race condition in
+														the gRPC Swift NIO transport layer causing streams to hang,
+														leading to an
+														<a href="https://github.com/grpc/grpc-swift-nio-transport/pull/181"
+														   target="_blank"
+														   rel="noopener"><strong>upstream fix</strong></a>. I
+														engineered fleet-deployment data pipelines that exposed
+														image-build timing, node lifecycle, and rollout metrics, and
+														created iCloud capacity-utilization data products spanning
+														Apple data centers and cloud providers that drove
+														multi-million-dollar savings by right-sizing vCPU and memory
+														requests and decommissioning older hardware.
+													</span>
+													<span class="text-dots">...</span>
+													<span class="btn-link show-more-button"
+														  data-more="0">Read More</span>
+												</p>
+											</div>
+										</div>
+									</article>
+
+									<!-- Twitter Inc. -->
+									<article class="timeline-entry">
+										<div class="timeline-entry-inner">
+											<div class="timeline-icon color-blue">
+												<svg class="icon brand" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M459.4 151.7c.3 4.5 .3 9.1 .3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103l0-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53 51.7 63.7 129.3 105.3 216.4 109.8-1.6-7.8-2.6-15.9-2.6-24 0-57.8 46.8-104.9 104.9-104.9 30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3z"/></svg>
+											</div>
+											<div class="timeline-label">
+												<h2>
+													Twitter Inc.
+													<br>
+													<span>Senior Software Engineer</span>
+													<span>&#8226;</span>
+													<span>Feb 2020 - August 2022</span>
+												</h2>
+												<p>
+													<span class="short-text">
+														I joined Twitter as a Software Engineer working with the Revenue
+														Site Reliability Engineering team, and was later promoted to
+														<strong>Senior Software Engineer</strong>.
+													</span>
+													<span class="long-text">
+														I enabled <strong>ZStandard</strong> compression for Google Cloud
+														Dataflow batch jobs' shuffle stage, cutting operational costs by
+														10-50%. I conceptualized and delivered an end-to-end streaming
+														data pipeline to aggregate and index distributed tracing data,
+														reducing data availability time from 24 hours to 30 minutes. I
+														built a framework to create and visualize on-demand service
+														dependency graphs, instrumental in identifying the services
+														required for serving Twitter's timeline feeds during a data
+														center migration, and led the migration of multiple Scalding
+														pipelines across teams to Dataflow as part of Twitter's move to
+														Google Cloud Platform. I also improved the Zipkin distributed
+														tracing framework by instrumenting Kafka producer and consumer
+														clients, and contributed upstream changes to
+														<strong>Apache Beam, Finatra, and Finagle</strong>.
+													</span>
+													<span class="text-dots">...</span>
+													<span class="btn-link show-more-button"
+														  data-more="0">Read More</span>
+												</p>
+											</div>
+										</div>
+									</article>
+
+
+									<!-- Twitter Inc. (internship) -->
+									<article class="timeline-entry">
+										<div class="timeline-entry-inner">
+											<div class="timeline-icon color-blue">
+												<svg class="icon brand" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M459.4 151.7c.3 4.5 .3 9.1 .3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103l0-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53 51.7 63.7 129.3 105.3 216.4 109.8-1.6-7.8-2.6-15.9-2.6-24 0-57.8 46.8-104.9 104.9-104.9 30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3z"/></svg>
+											</div>
+											<div class="timeline-label">
+												<h2>
+													Twitter Inc.
+													<br>
+													<span>Software Engineering Intern</span>
+													<span>&#8226;</span>
+													<span>May 2019 - August 2019</span>
+												</h2>
+												<p>
+													<span class="short-text">
+														In the Summer of 2019, I worked as a
+														<strong>Software Engineering</strong> Intern
+														at Twitter.
+														I primarily worked on automating the
+														<strong>Service Maturity Model</strong>
+														evaluation,
+													</span>
+													<span class="long-text">
+														which improved the evaluation execution time
+														by <strong>75%</strong>. To accomplish the task I developed a
+														<strong>Scala CLI</strong>
+														application using frameworks like <strong>
+															Guice, Finatra, JSoup, Jackson</strong>, etc.
+														I also personally made three notable contributions
+														to <strong>Finatra</strong> by adding functionality and fixing
+														two long-standing issues.
+													</span>
+													<span class="text-dots">...</span>
+													<span class="btn-link show-more-button"
+														  data-more="0">Read More</span>
+												</p>
+											</div>
+										</div>
+									</article>
+
+									<!-- Research Assistant, NCSU -->
+									<article class="timeline-entry">
+										<div class="timeline-entry-inner">
+											<div class="timeline-icon color-white">
+												<img alt="North Carolina State University"
+													 src="/img/ncsu.svg"
+													 class="brand__responsive ncsu">
+											</div>
+											<div class="timeline-label">
+												<h2>
+													North Carolina State University
+													<br>
+													<span>Graduate Research Assistant</span>
+													<span>&#8226;</span>
+													<span>January 2019 - May 2019</span>
+												</h2>
+												<p>
+													<span class="short-text">
+														Between internships, I worked as a Graduate Research Assistant,
+														developing a <strong>blockchain-based smart-manufacturing
+														marketplace</strong> for designers and manufacturers.
+													</span>
+													<span class="long-text">
+														I updated <strong>BigchainDB</strong> to its primitive
+														transaction model to support marketplace operations, and built
+														the distributed messaging infrastructure for communications
+														between the marketplace and prospective buyers and sellers. I
+														co-authored and presented
+														<strong>"SmartChainDB: Towards Semantic Events on
+														Blockchains"</strong> at the US2TS 2019 Symposium with Abhisha
+														Bhattacharyya and Kemafor Anyanwu.
+													</span>
+													<span class="text-dots">...</span>
+													<span class="btn-link show-more-button"
+														  data-more="0">Read More</span>
+												</p>
+											</div>
+										</div>
+									</article>
+
+									<!-- Morgan Stanley -->
+									<article class="timeline-entry">
+										<div class="timeline-entry-inner">
+											<div class="timeline-icon color-blue">
+												<img alt="Morgan Stanley"
+													 src="/img/morgan-stanley.svg"
+													 class="brand__responsive morgan-stanley">
+											</div>
+											<div class="timeline-label">
+												<h2>
+													Morgan Stanley
+													<br>
+													<span>Senior Associate</span>
+													<span>&#8226;</span>
+													<span>August 2016 - July 2018</span>
+												</h2>
+												<p>
+													<span class="short-text">
+														Post graduation, I worked as an
+														<strong>Analyst</strong> at Morgan Stanley. In its patented
+														<strong>Technology Analyst Program,
+														</strong>
+													</span>
+													<span class="long-text">I created a tool which allowed the users to
+														monitor disk usage using low-level system calls
+														using
+														<strong>eBPF</strong> (extended Berkley Packet Filters) and
+														<strong>BCC tools</strong>. My project was selected in the top
+														three amongst twenty-five extraordinary
+														projects and I was also awarded the
+														<strong>Creative Thinker Award</strong> during the program. As a
+														<strong>Senior Associate</strong>, I worked with the
+														<strong>Quality Assurance &amp; Production Management
+															(QAPM)</strong> team as a part of their
+														batch management efforts. I created various tools that would
+														help users efficiently manage
+														the batch, including UI elements allowing users to access
+														various reports and identify
+														blockers in the batch, if any. I also performed complex graph
+														operations like determining
+														the state of the world of the batch by superimposing the graph
+														from the past with the
+														current state. I made use of various technologies like
+														<strong>Scala, Hazelcast, HTML, CSS, &amp; Tyepscript</strong>
+														in combination with frameworks like
+														<strong>Angular, Bootstrap, d3.js, &amp; Highcharts</strong>.
+													</span>
+													<span class="text-dots">...</span>
+													<span class="btn-link show-more-button"
+														  data-more="0">Read More</span>
+												</p>
+											</div>
+										</div>
+									</article>
+
+									<!-- Cityflo -->
+									<article class="timeline-entry">
+										<div class="timeline-entry-inner">
+											<div class="timeline-icon color-yellow">
+												<img alt="Cityflo"
+													 src="/img/cityflo.jpg"
+													 class="brand__cover">
+											</div>
+											<div class="timeline-label">
+												<h2>
+													Cityflo
+													<br>
+													<span>Android &amp; iOS Lead</span>
+													<span>&#8226;</span>
+													<span>September 2015 - July 2016</span>
+												</h2>
+												<p>
+													<span class="short-text">
+														During my final year, I had the opportunity to do a part-time
+														internship with Cityflo &#8210; a travel services based
+														start-up.
+													</span>
+													<span class="long-text">
+														I architected and developed both the
+														<strong>Android</strong> &amp;
+														<strong>iOS</strong> applications which allowed commuters to
+														book rides, track their rides, and receive
+														various deals the company had to offer. I also created a
+														standalone mobile application
+														for tracking Cityflo's buses which used
+														<strong>Geofences</strong>, a part of the
+														<strong>Location Services API</strong>, which allowed me to
+														create hotspots around various bus
+														stops in the city. I used various technologies and APIs like
+														<strong>RxJava, Dagger, Retrofit, Gson, etc.</strong>
+														I developed an automated integration testing suite using
+														<strong>Roboelectric and XCTestSuite</strong> for Android &amp;
+														iOS applications.
+													</span>
+													<span class="text-dots">...</span>
+													<span class="btn-link show-more-button"
+														  data-more="0">Read More</span>
+												</p>
+												<div style="font-size: 24px">
+													<a href="https://go.rahuliyer.me/cityflo-android"
+													   target="_blank"
+													   rel="noopener"
+													   class="brand">
+														<svg class="icon brand" viewBox="0 0 384 512" aria-hidden="true" aria-label="Google Play"><path fill="currentColor" d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.3-23-41L73 39z"/></svg>
+													</a>
+													<a href="https://go.rahuliyer.me/cityflo-ios"
+													   target="_blank"
+													   rel="noopener"
+													   class="brand">
+														<svg class="icon brand" viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M400 32L48 32C21.5 32 0 53.5 0 80L0 432c0 26.5 21.5 48 48 48l352 0c26.5 0 48-21.5 48-48l0-352c0-26.5-21.5-48-48-48zM127 384.5c-5.5 9.6-17.8 12.8-27.3 7.3-9.6-5.5-12.8-17.8-7.3-27.3l14.3-24.7c16.1-4.9 29.3-1.1 39.6 11.4L127 384.5zm138.9-53.9L84 330.6c-11 0-20-9-20-20s9-20 20-20l51 0 65.4-113.2-20.5-35.4c-5.5-9.6-2.2-21.8 7.3-27.3 9.6-5.5 21.8-2.2 27.3 7.3l8.9 15.4 8.9-15.4c5.5-9.6 17.8-12.8 27.3-7.3 9.6 5.5 12.8 17.8 7.3 27.3l-85.8 148.6 62.1 0c20.2 0 31.5 23.7 22.7 40zm98.1 0l-29 0 19.6 33.9c5.5 9.6 2.2 21.8-7.3 27.3-9.6 5.5-21.8 2.2-27.3-7.3-32.9-56.9-57.5-99.7-74-128.1-16.7-29-4.8-58 7.1-67.8 13.1 22.7 32.7 56.7 58.9 102l52 0c11 0 20 9 20 20 0 11.1-9 20-20 20z"/></svg>
+													</a>
+												</div>
+											</div>
+										</div>
+									</article>
+
+									<!-- Samsung -->
+									<article class="timeline-entry">
+										<div class="timeline-entry-inner">
+											<div class="timeline-icon color-blue">
+												<img alt="Samsung"
+													 src="/img/samsung.svg"
+													 class="brand__responsive samsung">
+											</div>
+											<div class="timeline-label">
+												<h2>
+													Samsung R&amp;D Institute, Bengaluru
+													<br>
+													<span>Student Trainee</span>
+													<span>&#8226;</span>
+													<span>May 2015 - July 2015</span>
+												</h2>
+												<p>
+													<span class="short-text">
+														I got my first break into the software industry when I got an
+														internship at the Samsung R&amp;D Institute, Bengaluru.
+													</span>
+													<span class="long-text">
+														I was engaged in the Digital Solutions team wherein I created an
+														<strong>automated testing framework</strong> for the hardware IP
+														chips manufactured by Samsung.
+														I made the tool in
+														<strong>Java</strong>, the UI using the
+														<strong>Swings</strong> framework, and incorporated various
+														features like creating customized
+														test cases, running batch tests, and generating reports from the
+														tests through various
+														charts. I also played a vital role in integrating the tool in
+														the India division of the
+														Digital Solutions team.
+													</span>
+													<span class="text-dots">...</span>
+													<span class="btn-link show-more-button"
+														  data-more="0">Read More</span>
+												</p>
+											</div>
+										</div>
+									</article>
+
+									<!-- Chorus -->
+									<article class="timeline-entry">
+										<div class="timeline-entry-inner">
+											<div class="timeline-icon color-blue">
+												<img alt="Chorus"
+													 src="/img/chorus.png"
+													 class="brand__responsive chorus">
+											</div>
+											<div class="timeline-label">
+												<h2>
+													Chorus
+												</h2>
+												<p>
+													<span class="short-text">
+														I started my software development journey during my
+														undergraduate years with my first <strong>
+															cross-platform mobile
+															application
+														</strong> named Chorus.
+													</span>
+													<span class="long-text">
+														I learned extensively about how
+														<strong>Android and iOS</strong> operating systems work and how
+														to make an application with good UX. The application has
+														garnered around a <strong>quarter million downloads</strong>
+														across both Android and iOS platforms.
+													</span>
+													<span class="text-dots">...</span>
+													<span class="btn-link show-more-button"
+														  data-more="0">Read More</span>
+												</p>
+												<div style="font-size: 24px">
+													<a href="https://go.rahuliyer.me/chorus-android"
+													   target="_blank"
+													   rel="noopener"
+													   class="brand">
+														<svg class="icon brand" viewBox="0 0 384 512" aria-hidden="true" aria-label="Google Play"><path fill="currentColor" d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.3-23-41L73 39z"/></svg>
+													</a>
+													<a href="https://go.rahuliyer.me/chorus-ios"
+													   target="_blank"
+													   rel="noopener"
+													   class="brand">
+														<svg class="icon brand" viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M400 32L48 32C21.5 32 0 53.5 0 80L0 432c0 26.5 21.5 48 48 48l352 0c26.5 0 48-21.5 48-48l0-352c0-26.5-21.5-48-48-48zM127 384.5c-5.5 9.6-17.8 12.8-27.3 7.3-9.6-5.5-12.8-17.8-7.3-27.3l14.3-24.7c16.1-4.9 29.3-1.1 39.6 11.4L127 384.5zm138.9-53.9L84 330.6c-11 0-20-9-20-20s9-20 20-20l51 0 65.4-113.2-20.5-35.4c-5.5-9.6-2.2-21.8 7.3-27.3 9.6-5.5 21.8-2.2 27.3 7.3l8.9 15.4 8.9-15.4c5.5-9.6 17.8-12.8 27.3-7.3 9.6 5.5 12.8 17.8 7.3 27.3l-85.8 148.6 62.1 0c20.2 0 31.5 23.7 22.7 40zm98.1 0l-29 0 19.6 33.9c5.5 9.6 2.2 21.8-7.3 27.3-9.6 5.5-21.8 2.2-27.3-7.3-32.9-56.9-57.5-99.7-74-128.1-16.7-29-4.8-58 7.1-67.8 13.1 22.7 32.7 56.7 58.9 102l52 0c11 0 20 9 20 20 0 11.1-9 20-20 20z"/></svg>
+													</a>
+												</div>
+											</div>
+										</div>
+									</article>
+
+									<!-- End -->
+									<article class="timeline-entry">
+										<div class="timeline-entry-inner">
+											<div class="timeline-icon color-none">
+											</div>
+										</div>
+									</article>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</body>
+`;function t(e,t){return(e.matches||e.matchesSelector||e.msMatchesSelector||e.mozMatchesSelector||e.webkitMatchesSelector||e.oMatchesSelector).call(e,t)}function n(e,t){for(entry in e.entries)if(entry===t)return!0;return!1}function r(e){e.getAttribute(`data-more`)===`0`?i(e):a(e)}function i(e){e.parentElement.querySelectorAll(`.long-text`)[0].style.display=`inline`,e.parentElement.querySelectorAll(`.text-dots`)[0].style.display=`none`,e.setAttribute(`data-more`,1),e.innerHTML=`Read Less`}function a(e){e.parentElement.querySelectorAll(`.long-text`)[0].style.display=`none`,e.parentElement.querySelectorAll(`.text-dots`)[0].style.display=`inline`,e.setAttribute(`data-more`,0),e.innerHTML=`Read More`}function o(){let e=document.querySelector(`#navbar`);document.querySelectorAll(`#navbar a[data-nav-section]`).forEach(n=>{n.addEventListener(`click`,r=>{r.preventDefault();let i=n.getAttribute(`data-nav-section`),a=document.querySelector(`[data-section=${i}]`);if(a&&a.scrollIntoView({block:`start`,behavior:`smooth`}),t(e,`:not([hidden])`)){e.classList.remove(`in`);let t=document.createAttribute(`aria-expanded`);t.value=!1,e.attributes.setNamedItem(t),document.querySelector(`.js-colorlib-nav-toggle`).classList.remove(`active`)}return!1})})}function s(){let e=document.querySelector(`.js-colorlib-nav-toggle`);e.addEventListener(`click`,t=>{t.preventDefault(),document.body.classList.contains(`nav-open`)?(e.classList.remove(`active`),document.body.classList.remove(`nav-open`)):(e.classList.add(`active`),document.body.classList.add(`nav-open`))})}function c(){document.addEventListener(`click`,e=>{let t=document.querySelectorAll(`#colorlib-aside, .js-colorlib-nav-toggle`);t!==e.target&&n(t,e.target)&&document.body.classList.contains(`nav-open`)&&(document.body.classList.remove(`nav-open`),document.querySelector(`.js-colorlib-nav-toggle`).classList.remove(`active`))}),window.onscroll=()=>{document.body.classList.contains(`nav-open`)&&(document.body.classList.remove(`nav-open`),document.querySelector(`.js-colorlib-nav-toggle`).classList.remove(`active`))}}document.getElementById(`app`).innerHTML=e,document.addEventListener(`DOMContentLoaded`,()=>{document.querySelectorAll(`.show-more-button`).forEach(e=>e.addEventListener(`click`,()=>r(e))),s(),o(),c()});
