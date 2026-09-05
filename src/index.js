@@ -83,12 +83,12 @@ function setupHamburgerMenu() {
   hamburger.addEventListener("click", (event) => {
     event.preventDefault();
 
-    if (document.body.classList.contains("offcanvas")) {
+    if (document.body.classList.contains("nav-open")) {
       hamburger.classList.remove("active");
-      document.body.classList.remove("offcanvas");
+      document.body.classList.remove("nav-open");
     } else {
       hamburger.classList.add("active");
-      document.body.classList.add("offcanvas");
+      document.body.classList.add("nav-open");
     }
   });
 }
@@ -101,9 +101,9 @@ function setupSidebarMobileSupport() {
     if (
       container !== e.target &&
       contains(container, e.target) &&
-      document.body.classList.contains("offcanvas")
+      document.body.classList.contains("nav-open")
     ) {
-      document.body.classList.remove("offcanvas");
+      document.body.classList.remove("nav-open");
       document
         .querySelector(".js-colorlib-nav-toggle")
         .classList.remove("active");
@@ -111,8 +111,8 @@ function setupSidebarMobileSupport() {
   });
 
   window.onscroll = () => {
-    if (document.body.classList.contains("offcanvas")) {
-      document.body.classList.remove("offcanvas");
+    if (document.body.classList.contains("nav-open")) {
+      document.body.classList.remove("nav-open");
       document
         .querySelector(".js-colorlib-nav-toggle")
         .classList.remove("active");

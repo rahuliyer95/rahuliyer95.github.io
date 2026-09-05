@@ -1,10 +1,25 @@
-// Variables
-$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 // Imports
-@import "~bootstrap/scss/bootstrap";
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-@import "~@fortawesome/fontawesome-free/scss/brands";
-@import "~@fortawesome/fontawesome-free/scss/solid";
+// Only the Bootstrap modules this page actually uses (grid + reboot),
+// instead of the full framework.
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/variables-dark";
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+
+.text-center {
+  text-align: center;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+}
 
 $background: #212121;
 $primary: #2195f2;
@@ -89,6 +104,7 @@ h3 {
 }
 
 .card {
+  color: $textColor;
   background-color: #343434;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 12px 0 12px 0;
@@ -240,18 +256,18 @@ h3 {
   }
 }
 
-body.offcanvas {
+body.nav-open {
   overflow-x: hidden;
 }
 
-body.offcanvas #colorlib-aside {
+body.nav-open #colorlib-aside {
   transform: translateX(0);
   width: 300px;
   z-index: 999;
   position: fixed;
 }
-body.offcanvas #colorlib-main,
-body.offcanvas .colorlib-nav-toggle {
+body.nav-open #colorlib-main,
+body.nav-open .colorlib-nav-toggle {
   top: 0;
   transform: translateX(300px);
 }
@@ -352,6 +368,11 @@ body.offcanvas .colorlib-nav-toggle {
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 2px 10px;
+  text-decoration: none;
+}
+
+.resume .btn-download__label {
+  text-decoration: underline;
 }
 
 .fancy-collapse-panel .panel-default > .panel-heading {
@@ -412,18 +433,21 @@ body.offcanvas .colorlib-nav-toggle {
 }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 40px;
   height: 40px;
   background: #fff;
   border-radius: 50%;
-  text-align: center;
   box-shadow: 0 0 0 5px #343434;
-  line-height: 40px;
-  float: left;
 }
 
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon i {
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon i,
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon svg {
   color: #fff;
 }
 
@@ -444,8 +468,22 @@ body.offcanvas .colorlib-nav-toggle {
 .timeline-centered
   .timeline-entry
   .timeline-entry-inner
+  .timeline-icon.color-black {
+  background: #000;
+}
+
+.timeline-centered
+  .timeline-entry
+  .timeline-entry-inner
   .timeline-icon.color-red {
   background: #cc0000;
+}
+
+.timeline-centered
+  .timeline-entry
+  .timeline-entry-inner
+  .timeline-icon.color-white {
+  background: #fff;
 }
 
 .timeline-centered
@@ -515,27 +553,23 @@ body.offcanvas .colorlib-nav-toggle {
   display: inline;
 }
 
+.brand {
+  text-decoration: none;
+}
+
 .brand__responsive {
   height: 32px;
   max-height: 32px;
   width: 32px;
   max-width: 32px;
+  object-fit: contain;
 }
 
-.chorus {
-  content: url("../assets/img/chorus.png");
-}
-
-.cityflo {
-  content: url("../assets/img/cityflo.svg");
-}
-
-.morgan-stanley {
-  content: url("../assets/img/morgan-stanley.svg");
-}
-
-.samsung {
-  content: url("../assets/img/samsung.svg");
+.brand__cover {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .show-more-button {
@@ -568,7 +602,6 @@ body.offcanvas .colorlib-nav-toggle {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
   width: 30px;
   height: 2px;
   color: #fff;
